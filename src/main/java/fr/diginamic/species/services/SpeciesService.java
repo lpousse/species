@@ -21,7 +21,7 @@ public class SpeciesService {
 	
 	public Species searchById(Integer id) throws RuntimeException
 	{
-		return speciesRepo.findById(id).orElseThrow(() -> new RuntimeException("Species whith ID " + id + " does not exist"));
+		return speciesRepo.findById(id).orElseThrow(() -> new RuntimeException("Species with ID " + id + " does not exist"));
 	}
 	
 	public Species save(Species species)

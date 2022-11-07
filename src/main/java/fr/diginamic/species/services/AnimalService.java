@@ -21,7 +21,7 @@ public class AnimalService {
 	
 	public Animal searchById(Integer id) throws RuntimeException
 	{
-		return animalRepo.findById(id).orElseThrow(() -> new RuntimeException("Animal whith ID " + id + " does not exist"));
+		return animalRepo.findById(id).orElseThrow(() -> new RuntimeException("Animal with ID " + id + " does not exist"));
 	}
 	
 	public Animal save(Animal animal)
