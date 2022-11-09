@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<linkrel="stylesheet" th:href="@{/resources/css/main.css}"/>
+	<metacharset="utf-8">
+	<title>Liste des Utilisateurs</title>
+</head>
+<body>
+	<table class="mainTable">
+		<thead>
+			<tr>
+				<td>Username</td>
+				<td>Password Hash</td>
+				<td>Authorities</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="us: ${userList}">
+				<td th:text="${us.userName}"/>
+				<td th:text="${us.password}"/>
+				<td>
+					<ul>
+						<li th:each="auth : ${us.authorities}" th:text="${auth.name}"></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="button" class="button" value="Ajouter" onclick="window.location='/user/create'"/>
+</body>

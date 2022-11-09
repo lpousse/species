@@ -51,7 +51,7 @@ public class SpeciesController {
 	}
 	
 	@PostMapping
-	public String createOrUpdatePerson(@Valid Species species, BindingResult result)
+	public String createOrUpdateSpecies(@Valid Species species, BindingResult result)
 	{
 		if (result.hasErrors())
 			return TEMPLATE_CREATE_SPECIES;
@@ -60,7 +60,7 @@ public class SpeciesController {
 	}
 	
 	@GetMapping(path = "/delete/{id}")
-	public String deletePerson(@PathVariable("id") Integer id)
+	public String deleteSpecies(@PathVariable("id") Integer id)
 	{
 		speciesService.delete(id);
 		return "redirect:/species";
